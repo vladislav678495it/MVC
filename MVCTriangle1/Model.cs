@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MVCTriangle
+{
+   public class TriangleModel :ISubject
+    {
+        private double a, b, c;
+        public double A
+        {   get { return a; }
+            set
+            {   a = value;
+                NotifyObservers();
+            }
+        }
+        public double B
+        {
+            get { return b; }
+            set
+            {
+                b = value;
+                NotifyObservers();
+            }
+        }
+        public double C
+        {
+            get { return c; }
+            set
+            {
+                c = value;
+                NotifyObservers();
+            }
+        }
+        public double Perimeter
+        { get { return A + B + C; } }
+        public double Area
+        { get
+            {
+                double pp = (A + B + C)/2;
+                return Math.Sqrt(pp * (pp - A) * (pp - B) * (pp - C));
+            }
+        }
+
+        private List<IObserver> views = new List<IObserver>();
+        public void AddObserver(IObserver o) { views.Add(o); }
+        public void RemoveObserver(IObserver o) { views.Remove(o); }
+        public void NotifyObservers()
+        {
+            foreach (IObserver o in views)
+                o.Update();
+        }
+
+    }
+}

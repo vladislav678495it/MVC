@@ -1,0 +1,3 @@
+﻿1>------ Сборка начата: проект: MVCTriangle1, Конфигурация: Debug Any CPU ------
+1>  MVCTriangle1 -> E:\Project_files\VS projects\ProjectFiles\MVCTriangle1\MVCTriangle1\bin\Debug\MVCTriangle1.exe
+========== Сборка: успешно: 1, с ошибками: 0, без изменений: 0, пропущено: 0 ==========
